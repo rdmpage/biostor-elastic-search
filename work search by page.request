@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>baseURL</key>
+	<string>130.211.107.26/elasticsearch/biostor/work/_search</string>
+	<key>bodyString</key>
+	<string>{
+"query":{
+		"has_child": {
+			"type":"page",
+ "score_mode" : "sum",
+    		"query": {
+        		"match": {
+           			"OcrText": "Epiplema"
+				}
+    		}
+		}
+	}
+}</string>
+	<key>followRedirect</key>
+	<true/>
+	<key>handleJSONPCallbacks</key>
+	<false/>
+	<key>headers</key>
+	<array/>
+	<key>httpMethod</key>
+	<string>POST</string>
+	<key>jsonpScript</key>
+	<string></string>
+	<key>paramBodyUIChoice</key>
+	<integer>0</integer>
+	<key>parameters</key>
+	<array/>
+	<key>parametersType</key>
+	<integer>0</integer>
+	<key>presentBeforeChallenge</key>
+	<false/>
+	<key>stringEncoding</key>
+	<integer>4</integer>
+	<key>usingHTTPBody</key>
+	<true/>
+</dict>
+</plist>
