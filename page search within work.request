@@ -8,11 +8,12 @@
 	<string>{
 "query": {
 "bool": {
-"must": { "terms" : { "_parent": [ "60645" ] } },
- "should": [ {
+ "must": [ 
+{ "terms" : { "_parent": [ "146658" ] } },
+{
 
         "match": {
-           "OcrText": "Epiplema arcuata"
+           "OcrText": "Pterotosoma bilineata"
 		}
 }]
 }

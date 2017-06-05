@@ -98,16 +98,18 @@ POST /elasticsearch/biostor/page/_search
 {
 	"query": {
 		"bool": {
-			"must": {
-				"terms": {
-					"_parent": ["60645"]
+			"must": [{
+					"terms": {
+						"_parent": ["146658"]
+					}
+				},
+				{
+
+					"match": {
+						"OcrText": "Pterotosoma bilineata"
+					}
 				}
-			},
-			"should": [{
-				"match": {
-					"OcrText": "Epiplema arcuata"
-				}
-			}]
+			]
 		}
 	},
 	"highlight": {
