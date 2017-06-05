@@ -69,7 +69,7 @@ POST /elasticsearch/biostor/work/_search
 }
 ```
 
-### Searching for pages
+### Searching for pages matching text
 
 We can search pages for text, and highlight the hits (note use of **page** index).
 
@@ -87,6 +87,34 @@ POST /elasticsearch/biostor/page/_search
           "OcrText" : {}
        }
     }
+}
+```
+
+### Searching for pages matching text within a work
+
+POST /elasticsearch/biostor/page/_search
+
+```javascript
+{
+	"query": {
+		"bool": {
+			"must": {
+				"terms": {
+					"_parent": ["60645"]
+				}
+			},
+			"should": [{
+				"match": {
+					"OcrText": "Epiplema arcuata"
+				}
+			}]
+		}
+	},
+	"highlight": {
+		"fields": {
+			"OcrText": {}
+		}
+	}
 }
 ```
 
