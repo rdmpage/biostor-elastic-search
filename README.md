@@ -40,11 +40,11 @@ POST /elasticsearch/biostor/work/_search
 
 ```javascript
 {
-  "query": {
-        "match": {
-           "author.family": "Warren"
-			}
-    }
+	"query": {
+		"match": {
+			"author.family": "Warren"
+		}
+	}
 }
 ```
 
@@ -55,15 +55,15 @@ POST /elasticsearch/biostor/work/_search
 
 ```javascript
 {
-	"query":{
+	"query": {
 		"has_child": {
-			"type":"page",
- 			"score_mode" : "sum",
-    	"query": {
-        		"match": {
-           			"OcrText": "Epiplema"
-					}
-    	}
+			"type": "page",
+			"score_mode": "sum",
+			"query": {
+				"match": {
+					"OcrText": "Epiplema"
+				}
+			}
 		}
 	}
 }
@@ -78,15 +78,15 @@ POST /elasticsearch/biostor/page/_search
 ```javascript
 {
 	"query": {
-			"match": {
-				"OcrText": "Epiplema arcuata"
-			}
-    },
+		"match": {
+			"OcrText": "Epiplema arcuata"
+		}
+	},
 	"highlight": {
-       "fields" : {
-          "OcrText" : {}
-       }
-    }
+		"fields": {
+			"OcrText": {}
+		}
+	}
 }
 ```
 
